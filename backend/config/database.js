@@ -8,7 +8,7 @@ const connectDB = async () => {
     const conn = await mongoose.connect(process.env.MONGODB_URI);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
 
-    // Wait until the connection is ready
+
     await mongoose.connection.db.collection('users').dropIndex('username_1')
       .then(() => console.log('Dropped username_1 index'))
       .catch(err => {

@@ -98,18 +98,6 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // const clearCart = async () => {
-  //   if (!token) return;
-
-  //   try {
-  //     const response = await cartAPI.clearCart(token);
-  //     dispatch({ type: 'SET_CART', payload: response.data.cart });
-  //   } catch (error) {
-  //     dispatch({ type: 'SET_ERROR', payload: 'Error clearing cart' });
-  //   }
-  // };
-
-
 
 
   const clearCart = async () => {

@@ -34,7 +34,6 @@ const AuthModal = ({ isOpen, onClose }) => {
     }
 
     if (result.success) {
-      // Process any pending cart item
       await processPendingItem();
       onClose();
     }
@@ -65,7 +64,7 @@ const AuthModal = ({ isOpen, onClose }) => {
     onClick={(e) => e.stopPropagation()}
   >
         <div className="p-6">
-          {/* Header */}
+
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-gray-900">
               {isLogin ? 'Welcome Back' : 'Create Account'}
@@ -78,16 +77,13 @@ const AuthModal = ({ isOpen, onClose }) => {
             </button>
           </div>
 
-          {/* Error Message */}
           {error && (
             <div className="bg-error-50 border border-error-200 text-error-700 px-4 py-3 rounded-lg mb-4">
               {error}
             </div>
           )}
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name Field (only for registration) */}
             {!isLogin && (
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -106,7 +102,6 @@ const AuthModal = ({ isOpen, onClose }) => {
               </div>
             )}
 
-            {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email Address
@@ -123,7 +118,6 @@ const AuthModal = ({ isOpen, onClose }) => {
               />
             </div>
 
-            {/* Password Field */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 Password
@@ -150,7 +144,6 @@ const AuthModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
@@ -164,7 +157,6 @@ const AuthModal = ({ isOpen, onClose }) => {
             </button>
           </form>
 
-          {/* Toggle Mode */}
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               {isLogin ? "Don't have an account?" : "Already have an account?"}

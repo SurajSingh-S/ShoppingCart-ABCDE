@@ -6,7 +6,7 @@ import { ordersAPI } from '../services/api';
 import LoadingSpinner from './LoadingSpinner';
 
 const CheckoutModal = ({ isOpen, onClose }) => {
-  const [step, setStep] = useState(1); // 1: shipping, 2: payment, 3: confirmation
+  const [step, setStep] = useState(1); 
   const [loading, setLoading] = useState(false);
   const [order, setOrder] = useState(null);
   const [formData, setFormData] = useState({
@@ -88,7 +88,6 @@ const CheckoutModal = ({ isOpen, onClose }) => {
     <div className="modal-overlay fade-in" onClick={handleClose}>
       <div className="modal-content slide-up max-w-2xl" onClick={(e) => e.stopPropagation()}>
         <div className="p-6">
-          {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-gray-900">
               {step === 1 && 'Shipping Information'}
@@ -119,7 +118,6 @@ const CheckoutModal = ({ isOpen, onClose }) => {
             </div>
           ) : (
             <>
-              {/* Step 1: Shipping */}
               {step === 1 && (
                 <form onSubmit={handleSubmitShipping} className="space-y-4">
                   <div>
@@ -208,10 +206,8 @@ const CheckoutModal = ({ isOpen, onClose }) => {
                 </form>
               )}
 
-              {/* Step 2: Payment & Review */}
               {step === 2 && (
                 <div className="space-y-6">
-                  {/* Order Summary */}
                   <div>
                     <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
                     <div className="space-y-3 max-h-60 overflow-y-auto">
@@ -237,7 +233,7 @@ const CheckoutModal = ({ isOpen, onClose }) => {
                     </div>
                   </div>
 
-                  {/* Payment Method */}
+                  
                   <div>
                     <h3 className="text-lg font-semibold mb-4">Payment Method</h3>
                     <div className="space-y-3">
@@ -279,7 +275,7 @@ const CheckoutModal = ({ isOpen, onClose }) => {
                     </div>
                   </div>
 
-                  {/* Actions */}
+                  
                   <div className="flex space-x-3">
                     <button
                       onClick={() => setStep(1)}
@@ -298,7 +294,6 @@ const CheckoutModal = ({ isOpen, onClose }) => {
                 </div>
               )}
 
-              {/* Step 3: Confirmation */}
               {step === 3 && order && (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">

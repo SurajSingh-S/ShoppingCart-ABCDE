@@ -43,7 +43,6 @@ const ProductCard = ({ item, onAuthRequired }) => {
 
   return (
     <div className="card group">
-      {/* Image */}
       <div className="relative aspect-square overflow-hidden">
         <img
           src={item.image}
@@ -62,22 +61,17 @@ const ProductCard = ({ item, onAuthRequired }) => {
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-4">
-        {/* Brand */}
         <p className="text-sm text-gray-500 mb-1">{item.brand}</p>
         
-        {/* Name */}
         <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
           {item.name}
         </h3>
         
-        {/* Description */}
         <p className="text-sm text-gray-600 mb-3 line-clamp-2">
           {item.description}
         </p>
 
-        {/* Rating */}
         <div className="flex items-center space-x-1 mb-3">
           <div className="flex">
             {renderStars(item.rating)}
@@ -87,7 +81,6 @@ const ProductCard = ({ item, onAuthRequired }) => {
           </span>
         </div>
 
-        {/* Price and Add to Cart */}
         <div className="flex items-center justify-between">
           <span className="text-lg font-bold text-gray-900">
             {formatPrice(item.price)}

@@ -9,7 +9,6 @@ const api = axios.create({
   }
 });
 
-// Auth API
 export const authAPI = {
   login: (email, password) => 
     api.post('/auth/login', { email, password }),
@@ -28,7 +27,6 @@ export const authAPI = {
     })
 };
 
-// Items API
 export const itemsAPI = {
   getAll: (category = '', search = '') => {
     const params = new URLSearchParams();
@@ -41,7 +39,6 @@ export const itemsAPI = {
     api.get(`/items/${id}`)
 };
 
-// Cart API
 export const cartAPI = {
   getCart: (token) => 
     api.get('/cart', {
@@ -69,7 +66,6 @@ export const cartAPI = {
     })
 };
 
-// Orders API
 export const ordersAPI = {
   createOrder: (token, orderData) => 
     api.post('/orders', orderData, {

@@ -42,12 +42,11 @@ const HomePage = ({ onAuthRequired }) => {
   const filterItems = () => {
     let filtered = items;
 
-    // Filter by category
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(item => item.category === selectedCategory);
     }
 
-    // Filter by search query
+
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(item =>
@@ -94,7 +93,7 @@ const HomePage = ({ onAuthRequired }) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* Hero Section */}
+
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Discover Amazing Products
@@ -104,12 +103,13 @@ const HomePage = ({ onAuthRequired }) => {
         </p>
       </div>
 
-      {/* Search Bar (Mobile) */}
+
       <div className="md:hidden mb-6">
         <SearchBar onSearch={handleSearch} />
       </div>
 
-      {/* Filters */}
+
+
       <div className="mb-8">
         <CategoryFilter
           categories={categories}
@@ -118,7 +118,7 @@ const HomePage = ({ onAuthRequired }) => {
         />
       </div>
 
-      {/* Results Summary */}
+
       <div className="mb-6">
         <p className="text-gray-600">
           {filteredItems.length} {filteredItems.length === 1 ? 'product' : 'products'}
@@ -127,7 +127,7 @@ const HomePage = ({ onAuthRequired }) => {
         </p>
       </div>
 
-      {/* Products Grid */}
+
       {filteredItems.length > 0 ? (
         <ProductGrid items={filteredItems} onAuthRequired={onAuthRequired} />
       ) : (

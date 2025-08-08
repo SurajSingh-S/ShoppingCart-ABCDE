@@ -16,13 +16,14 @@ const Header = ({ onAuthClick, onCartClick, onCheckoutClick }) => {
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+
+
           <div className="flex items-center space-x-2">
             <ShoppingBag className="h-8 w-8 text-primary-500" />
             <h1 className="text-2xl font-bold text-gray-900">ShopCart</h1>
           </div>
 
-          {/* Search Bar */}
+
           <div className="hidden md:flex flex-1 max-w-lg mx-8">
             <div className="relative w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -34,9 +35,7 @@ const Header = ({ onAuthClick, onCartClick, onCheckoutClick }) => {
             </div>
           </div>
 
-          {/* Actions */}
           <div className="flex items-center space-x-4">
-            {/* Cart Button */}
             <button
               onClick={onCartClick}
               className="relative p-2 text-gray-600 hover:text-primary-500 transition-colors"
@@ -49,7 +48,6 @@ const Header = ({ onAuthClick, onCartClick, onCheckoutClick }) => {
               )}
             </button>
 
-            {/* Checkout Button */}
             <button
               onClick={onCheckoutClick}
               className="hidden sm:inline-flex btn-primary"
@@ -58,7 +56,6 @@ const Header = ({ onAuthClick, onCartClick, onCheckoutClick }) => {
               Checkout
             </button>
 
-            {/* Auth Section */}
             {isAuthenticated ? (
               <div className="flex items-center space-x-3">
                 <div className="hidden sm:block text-sm">

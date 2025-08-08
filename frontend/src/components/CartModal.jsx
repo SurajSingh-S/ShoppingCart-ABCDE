@@ -73,7 +73,6 @@ const CartModal = ({ isOpen, onClose }) => {
             </div>
           ) : (
             <>
-              {/* Cart Items */}
               <div className="space-y-4 mb-6 max-h-80 overflow-y-auto">
                 {items.map((cartItem) => (
                   <div key={cartItem._id} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
@@ -92,7 +91,6 @@ const CartModal = ({ isOpen, onClose }) => {
                       </p>
                     </div>
 
-                    {/* Quantity Controls */}
                     <div className="flex items-center space-x-2">
                       <button
                         onClick={() => handleQuantityChange(cartItem.item._id, cartItem.quantity - 1)}
@@ -124,7 +122,6 @@ const CartModal = ({ isOpen, onClose }) => {
                 ))}
               </div>
 
-              {/* Total and Actions */}
               <div className="border-t pt-4">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-lg font-semibold text-gray-900">Total:</span>
